@@ -68,6 +68,7 @@
                     <input type="password" id="rePassword" class="error">
                 </label>
                 <button type="button" class="submit">Sign Up Now</button>
+                <div class="message">Password phải đủ 8 kí tự</div>
             </div>
         </div>
     </div>
@@ -89,10 +90,12 @@
             errorSelector: '.error',
             rules: [
                 validator.isRequired('#username'),
-                //validator.isRequired('#email2'),
+                validator.isRequired('#email2'),
                 validator.isEmail('#email2'),
-                validator.isRequired('#password2'),
-                validator.isRequired('#rePassword'),
+                validator.minLength('#password2', 8),
+                validator.isConfirmed('#rePassword', function() {
+                    return document.querySelector('.cont #password2').value;
+                }),
             ]
         });
     </script>

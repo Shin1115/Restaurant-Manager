@@ -52,3 +52,19 @@ validator.isEmail = function(selector) {
         }
     }
 }
+validator.minLength = function(selector, min) {
+    return {
+        selector: selector,
+        test: function(value) {
+            return value.length >= min ? undefined : 'Phải đủ 8 kí tự';
+        }
+    }
+}
+validator.isConfirmed = function(selector, getConfirmValue) {
+    return {
+        selector: selector,
+        test: function(value) {
+            return value === getConfirmValue() ? undefined : 'Phải trùng với trường password';
+        }
+    }
+}
