@@ -75,6 +75,10 @@ input {
     font-family: 'Nunito', sans-serif;
 }
 
+.invalid {
+    border-bottom: 1px solid red;
+}
+
 button {
     display: block;
     margin: 0 auto;
@@ -170,7 +174,7 @@ button {
     top: 0;
     width: 900px;
     height: 100%;
-    background-image: url(/Resourses/image/bg.jpg);
+    background-image: url(/Resourses/image/bg1.jpg);
     background-size: cover;
     transition: -webkit-transform 1.2s ease-in-out;
     transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
